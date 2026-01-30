@@ -1,4 +1,4 @@
-#include "renseki.dtsi"
+#include "corne.dtsi"
 
 // if you're using the Amoeba PCBs, you may want to put the GPIO_PULL_DOWN in the
 // col-gpios instead

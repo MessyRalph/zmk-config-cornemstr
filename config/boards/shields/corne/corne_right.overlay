@@ -6,7 +6,7 @@
 
 // when using amoeba, put GPIO_PULL_DOWN in cols instead
 
-&kscan {
+&kscan0 {
     row-gpios
         = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row0
         , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row1

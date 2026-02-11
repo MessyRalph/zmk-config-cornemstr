@@ -1,15 +1,16 @@
-if SHIELD_CORNE_LEFT
+if SHIELD_SPLIT3X5_LEFT || SHIELD_SPLIT3X5_RIGHT
 
 config ZMK_KEYBOARD_NAME
     default "Corne"
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-endif
-
-if SHIELD_CORNE_LEFT || SHIELD_CORNE_RIGHT
-
 config ZMK_SPLIT
     default y
+
+# Total matrix size: 4 rows x 5 columns
+config ZMK_MATRIX_LAYOUT_ROWS
+    default 4
+
+config ZMK_MATRIX_LAYOUT_COLS
+    default 5
+
 endif

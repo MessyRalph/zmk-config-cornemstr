@@ -1,23 +1,22 @@
 #include "corne.dtsi"
 
-&default_transform { // The matrix transform for this board is 5
+&default_transform {
     col-offset = <5>;
 };
 
-// when using amoeba, put GPIO_PULL_DOWN in cols instead
-
-&kscan {
+&kscan0 {
     row-gpios
-        = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row0
-        , <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row1
-        , <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row2
-        , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row3
-        ; 
+        = <&gpio0 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 1
+        , <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 2
+        , <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 3
+        , <&gpio1 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 4 (Thumb)
+        ;
+
     col-gpios
-        = <&pro_micro 1 (GPIO_ACTIVE_HIGH)> // col5
-        , <&pro_micro 15 (GPIO_ACTIVE_HIGH)> // col6
-        , <&pro_micro 18 (GPIO_ACTIVE_HIGH)> // col7
-        , <&pro_micro 19 (GPIO_ACTIVE_HIGH)> // col8
-        , <&pro_micro 20 (GPIO_ACTIVE_HIGH)> // col9
+        = <&gpio0 1  GPIO_ACTIVE_HIGH> // Col 1
+        , <&gpio0 15 GPIO_ACTIVE_HIGH> // Col 2
+        , <&gpio1 18 GPIO_ACTIVE_HIGH> // Col 3
+        , <&gpio1 19 GPIO_ACTIVE_HIGH> // Col 4
+        , <&gpio0 20  GPIO_ACTIVE_HIGH> // Col 5
         ;
 };
